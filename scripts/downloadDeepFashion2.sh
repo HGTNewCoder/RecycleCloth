@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e  # stop if any command fails
 
-ZIP_DIR="/home/ubuntu/iai2o/downloadedZip"
+ZIP_DIR="/home/ubuntu/RecycleCloth/downloadedZip"
 ZIP_FILE="$ZIP_DIR/deepfashion2-original-with-dataframes.zip"
-DATASET_DIR="/home/ubuntu/iai2o/Datasets"
+DATASET_DIR="/home/ubuntu/RecycleCloth/Datasets"
 
 # Create directories if they don't exist
 mkdir -p "$ZIP_DIR"
@@ -15,4 +15,3 @@ curl -L -o "$ZIP_FILE" \
 
 # Unzip after download
 unzip -o "$ZIP_FILE" -d "$DATASET_DIR"
-``

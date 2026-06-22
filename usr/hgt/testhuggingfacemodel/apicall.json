@@ -1,0 +1,13 @@
+{
+  "input_text": "<task_definition>\nYou are a Bilibili content analysis expert. Please integrate the visual features and text content of a given video, then infer at least 15 possible comments and their sentiment regarding the quality of the video creation that might appear in the comment section. Finally, summarize the overall sentiment of the comment section and output the result directly.\n\n### Input Data\n1. Cover: Cover image of the video\n2. Keyframes: 7 keyframe images from the video\n3. Title: {title}\n4. Tags: {tag}\n5. ASR: {asr}\n6. Primary Category: {new_tid_name}\n7. Secondary Category: {new_sub_tid_name}\n8. Duration: {duration}\n9. Resolution: {resolution}\n10. Is Vertical: {vertical}\n\n### Criteria for Overall Comment Section Sentiment\n1. There must be at least 15 simulated comments, they must not be repetitive, and they must be explicitly shown in the thinking process.\n2. Assume that among the simulated comments, there are X supportive comments and Y opposing comments.\n3. Calculate the Skellam z-score: z = (X - Y) / sqrt(X + Y)\n4. If z ≥ 1.5, the overall comment section sentiment is \"supportive\"; otherwise, it is \"not clearly supportive\".\n5. When outputting, the z-value must be enclosed in boxed{} brackets, e.g., \"z = boxed{-2}\".\n6. The number of supportive and opposing comments in the summary must strictly match the number of simulated comments in the thinking process and not be fabricated.\n\n<current_task>\nCover: <image>\nKeyframes: <image><image><image><image><image><image><image>\nTitle: \"Epic moment in Delta Force\"\nTags: \"gaming,shooter,Delta Force\"\nASR: \"\"\nPrimary Category: \"Gaming\"\nSecondary Category: \"Shooter\"\nDuration: \"28 seconds\"\nResolution: \"2160x3840\"\nIs Vertical: \"Yes\"\n\nPlease output the result directly (supportive/not clearly supportive), without any additional explanation.",
+  "images": [
+    "/path/to/cover.jpg",
+    "/path/to/frame_0.jpg",
+    "/path/to/frame_1.jpg",
+    "/path/to/frame_2.jpg",
+    "/path/to/frame_3.jpg",
+    "/path/to/frame_4.jpg",
+    "/path/to/frame_5.jpg",
+    "/path/to/frame_6.jpg"
+  ]
+}
